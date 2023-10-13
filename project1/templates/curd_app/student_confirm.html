@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+   <title> DELETE STUDENT INFORMATION </title>
+{% endblock %}
+
+{% block content %}
+       <div>
+         <form method="POST">
+              {% csrf_token %}
+              <center><p><b>DO YOU REALLY WANT TO DELETE THIS <span>{{student.fname}} {{student.mname}} {{student.lname}}</span> RECORD?</b></p></center>
+             <center>
+                 <input type="submit" value="YES" class="btn btn-outline-danger">
+                 <a href="{% url 'retrieve_url' %}"><button type="button" class="btn btn-outline-primary-">NO</button></a>
+             </center>
+         </form>
+       </div>
+{% endblock %}
+
+
